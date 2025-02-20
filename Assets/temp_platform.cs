@@ -14,7 +14,7 @@ public class temp_platform : MonoBehaviour
     void CreateGround()
     {
         GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-        plane.transform.localScale = new Vector3(2, 1, 2); //enlarges plane
+        plane.transform.localScale = new Vector3(10, 1, 10); //enlarges plane
 
         Renderer renderer = plane.GetComponent<Renderer>();
         renderer.material.color = Color.blue;
