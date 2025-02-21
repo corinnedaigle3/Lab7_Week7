@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
-public class temp_platform : MonoBehaviour
+public class platform : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
