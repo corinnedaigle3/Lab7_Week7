@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     public Vector3 endPoints;
     public float speed = 2f;
     public float t = 0;
-    private bool translateMovingForward = true;
 
     void Start()
     {
