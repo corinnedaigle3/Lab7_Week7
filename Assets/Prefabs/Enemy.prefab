@@ -121,9 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa117968db7922740817dd7fedb519e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pills: {fileID: 5626681092180563444}
-  startPoints: {x: 0, y: 0, z: 0}
-  endPoints: {x: 0, y: 0, z: 0}
+  patrolRoute: {fileID: 4909099265400764685, guid: 21d8259fff608f843bc8142f9fd41a5c, type: 3}
+  pills: {fileID: 8306859945766165629, guid: 0d4d6829b205aee41a16d3b2b18a7410, type: 3}
   speed: 2
   t: 0
 --- !u!195 &5939447196909280739
