@@ -7,8 +7,6 @@ public class Enemy : MonoBehaviour
 {
     public Transform patrolRoute; //waypoints
     public Transform pills; //Player
-    //public Vector3 startPoints;
-    //public Vector3 endPoints;
 
     public float speed = 2f;
     public int t = 0;
@@ -19,9 +17,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
-        // Define start and end points
-        //startPoints = new Vector3(-5, 1, -1);
-        //endPoints = new Vector3(-5, 1, -8.5f);
+        //swapped vectors out for waypoints
         agent = GetComponent<NavMeshAgent>();
         // Set different colors for each object
         pills.GetComponent<Renderer>().material.color = Color.blue;
@@ -34,12 +30,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 
-        // MoveTowards for second pill
-       // pills.transform.position = Vector3.MoveTowards(pills.transform.position, endPoints, speed * Time.deltaTime);
-       // if (Vector3.Distance(pills.transform.position, endPoints) < 0.1f)
-        {
-            //(startPoints, endPoints) = (endPoints, startPoints);
-        }
+
         //locate player and chase if within close proximity
         if (!chasingPlayer && !agent.pathPending && agent.remainingDistance < 0.2f)
         {
@@ -48,7 +39,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    void MoveToNextPatrolLocation()
+    void MoveToNextPatrolLocation() //enemy moves to next location
     {
         if (locations.Length == 0) return;
         {
@@ -57,7 +48,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void InitializePatrolRoute()
+    void InitializePatrolRoute()//method initialized patrol route
     {
         locations = new Transform[patrolRoute.childCount];
         for (int i = 0; i < patrolRoute.childCount; i++)
@@ -67,12 +58,12 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision) //method recognizes collision
     {
         if (collision.gameObject.name == "Player")
         {
             Debug.Log("Hey! I'm walking here!");
-            pills.GetComponent<Renderer>().material.color = Color.red;
+            pills.GetComponent<Renderer>().material.color = Color.red; //player pills gets angered and turns red
         }
 
         if (collision.gameObject.name == "Player")
@@ -83,7 +74,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnCollisionExit(Collision collision) //method for end of collision
     {
         if (collision.gameObject.name == "Player")
         {
