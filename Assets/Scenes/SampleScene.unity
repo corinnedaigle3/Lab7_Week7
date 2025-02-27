@@ -5900,6 +5900,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5939447196909280739, guid: 68d4fb56e10523044b06a03b57d72124, type: 3}
+      propertyPath: m_Speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8963046023192286003, guid: 68d4fb56e10523044b06a03b57d72124, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
